@@ -49,16 +49,29 @@ const element6 = {
     }
 };
 
-ReactDOM.render(
-    //<h1>Hello, world!</h1>,
-    //element,
-    //element2,
-    //element3,
-    //getGreeting(user2),
-    element5,
-    //element6, // doesn't work
-    document.getElementById('root')
-);
+// ex 7
+function tick(){
+    const element7 = (
+        <div>
+            <h1>Hello, world!</h1>
+            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        </div>
+    );
+    ReactDOM.render(element7, document.getElementById('root'));
+}
+
+setInterval(tick,1000);
+
+// ReactDOM.render(
+//     //<h1>Hello, world!</h1>,
+//     //element,
+//     //element2,
+//     //element3,
+//     //getGreeting(user2),
+//     //element5,
+//     //element6, // doesn't work
+//     document.getElementById('root')
+// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
