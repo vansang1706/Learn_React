@@ -59,19 +59,130 @@ function tick(){
     );
     ReactDOM.render(element7, document.getElementById('root'));
 }
+//setInterval(tick,1000);
 
-setInterval(tick,1000);
+// Components and Props
+// ex 8
+function Welcome(props){
+    return <h1>Hello, {props.name}!</h1>;
+}
+const element8 = <Welcome name='Sang'/>;
 
-// ReactDOM.render(
-//     //<h1>Hello, world!</h1>,
-//     //element,
-//     //element2,
-//     //element3,
-//     //getGreeting(user2),
-//     //element5,
-//     //element6, // doesn't work
-//     document.getElementById('root')
-// );
+// ex 9
+function App(){
+    return (
+        <div>
+            <Welcome name='Anh'/>
+            <Welcome name='Than'/>
+            <Welcome name='Thach'/>
+        </div>
+    );
+}
+var element9 = <App/>;
+
+// ex 10
+function Comment(props){
+    return (
+        <div className='Comment'>
+            <div className='UserInfo'>
+                <img className='Avatar'
+                    src={props.author.avatarUrl}
+                    alt={props.author.name}
+                />
+                <div className='UserInfo-name'>
+                    {props.author.name}
+                </div>
+            </div>
+            <div className='Comment-text'>
+                {props.text}
+            </div>
+            <div className='Comment-date'>
+                {formatDate(props.date)}
+            </div>
+        </div>
+    );
+}
+
+function formatDate(date){
+    return date.toLocaleDateString();
+}
+
+const cmt = {
+    d: new Date(),
+    t: 'I hope you enjoy learning React!',
+    a:{
+        name: 'Hello Kitty',
+        avatarUrl: 'https://placekitten.com/g/64/64'
+    }
+};
+
+var element10 = <Comment
+                    date={cmt.d}
+                    text={cmt.t}
+                    author={cmt.a}
+                />;
+
+// ex 11
+function Avatar(props){
+    return(
+        <img className="Avatar"
+            src={props.author.avatarUrl}
+            alt={props.author.name}
+        />
+    );
+}
+
+function UserInfo(props){
+    return(
+        <div className='UserInfo'>
+            <Avatar author={props.author}/>
+            <div className='UserInfo-name'>
+                {props.author.name}
+            </div>
+        </div>
+
+    );
+}
+
+const cmt2 = {
+    d: new Date(),
+    t: 'He hopes you enjoy learning React!',
+    a:{
+        name: 'Hello Kitty 2',
+        avatarUrl: 'https://placekitten.com/g/64/64'
+    }
+};
+
+function Comment2(props){
+    return(
+        <div className='Comment'>
+            <UserInfo author ={props.author}/>
+            <div className='Comment-text'>
+                {props.text}
+            </div>
+            <div className='Comment-date'>
+                {formatDate(props.date)}
+            </div>
+        </div>
+    )
+}
+var element11 = <Comment2 date={cmt2.d} text={cmt2.t} author={cmt2.a}/>
+
+
+ReactDOM.render(
+    //<h1>Hello, world!</h1>,
+    //element,
+    //element2,
+    //element3,
+    //getGreeting(user2),
+    //element5,
+    //element6, // doesn't work
+    //element8,
+    //element9,
+    //element10,
+    element11,
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
