@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
 //import App from './App';
+import Clock from './Clock';
 import * as serviceWorker from './serviceWorker';
 
 // ex 1
@@ -168,6 +169,28 @@ function Comment2(props){
 }
 var element11 = <Comment2 date={cmt2.d} text={cmt2.t} author={cmt2.a}/>
 
+// ex 12
+// function Clock(props){
+//     return(
+//         <div>
+//             <h1>Hello, world!</h1>
+//             <h2>It is {props.date.toLocaleTimeString()}.</h2>
+//         </div>
+//     )
+// }
+
+// EX 13
+// function Tick(){
+//     ReactDOM.render(
+//         <Clock date={new Date()}/>,
+//         document.getElementById('root')
+//     )
+// }
+
+// setInterval(tick,1000);
+
+//ex 13
+var element14 = <Clock/>
 
 ReactDOM.render(
     //<h1>Hello, world!</h1>,
@@ -180,7 +203,7 @@ ReactDOM.render(
     //element8,
     //element9,
     //element10,
-    element11,
+    element14,
     document.getElementById('root')
 );
 
