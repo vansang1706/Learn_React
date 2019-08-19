@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 //import App from './App';
 import Clock from './Clock';
+import Toggle from './HandlingEvents';
+import LoggingButton from './HandlingEvents';
+import Arguments from './HandlingEvents';
 import * as serviceWorker from './serviceWorker';
 
 // ex 1
@@ -192,20 +195,36 @@ var element11 = <Comment2 date={cmt2.d} text={cmt2.t} author={cmt2.a}/>
 //ex 13
 var element14 = <Clock/>
 
+// ReactDOM.render(
+//     //<h1>Hello, world!</h1>,
+//     //element,
+//     //element2,
+//     //element3,
+//     //getGreeting(user2),
+//     //element5,
+//     //element6, // doesn't work
+//     //element8,
+//     //element9,
+//     //element10,
+//     element14,
+//     document.getElementById('root')
+// );
+
+// Handling events
+// Toggle
+var toggle = <Toggle/>
+
+// LoggingButton
+var loggingButton = <LoggingButton/>
+
+var argument = <Arguments/>
+
 ReactDOM.render(
-    //<h1>Hello, world!</h1>,
-    //element,
-    //element2,
-    //element3,
-    //getGreeting(user2),
-    //element5,
-    //element6, // doesn't work
-    //element8,
-    //element9,
-    //element10,
-    element14,
+    //toggle,
+    //loggingButton,
+    argument,
     document.getElementById('root')
-);
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
